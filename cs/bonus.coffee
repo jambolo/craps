@@ -1,7 +1,7 @@
 SMALL_PAYOUT = 31
 ALL_PAYOUT = 151
 TALL_PAYOUT = 31
-NTRIALS = 1000000
+NTRIALS = 10000000
 distribution = new Array(13).fill(0)
 nRolls = 0
 
@@ -49,6 +49,6 @@ for i in [0...NTRIALS]
     roll = randomRoll()
 
 console.log "After #{NTRIALS} trials,"
-console.log "small wins = #{nSmallWins} (#{nSmallWins/NTRIALS*100}%), return = #{nSmallWins*SMALL_PAYOUT/NTRIALS}"
-console.log "tall wins = #{nTallWins} (#{nTallWins/NTRIALS*100}%), return = #{nTallWins*TALL_PAYOUT/NTRIALS}"
-console.log "all wins = #{nAllWins} (#{nAllWins/NTRIALS*100}%), return = #{nAllWins*ALL_PAYOUT/NTRIALS}"
+console.log "small wins = #{nSmallWins} (#{Number(nSmallWins/NTRIALS*100).toFixed(1)}%), return = #{Number(nSmallWins*SMALL_PAYOUT/NTRIALS).toFixed(2)}"
+console.log "tall wins  = #{nTallWins} (#{Number(nTallWins/NTRIALS*100).toFixed(1)}%), return = #{Number(nTallWins *TALL_PAYOUT/NTRIALS).toFixed(2)}"
+console.log "all wins   = #{nAllWins} (#{Number(nAllWins/NTRIALS*100).toFixed(1)}%), return = #{Number(nAllWins*ALL_PAYOUT/NTRIALS).toFixed(2)}"

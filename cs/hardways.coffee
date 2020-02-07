@@ -1,7 +1,7 @@
 PAYOUT_4_10 = 8 # 7 to 1
 PAYOUT_6_8 = 10 # 9 to 1
 
-NTRIALS = 1000000
+NTRIALS = 10000000
 counts = new Array(7).fill(0)
 
 randomRoll = () ->
@@ -21,7 +21,7 @@ for i in [1..6]
       wins = wins + 1 
 
   switch i
-    when 2 then console.log "for hard #{i*2}, wins = #{wins} (#{wins/NTRIALS*100}%), return = #{PAYOUT_4_10*wins/NTRIALS}"
-    when 3 then console.log "for hard #{i*2}, wins = #{wins} (#{wins/NTRIALS*100}%), return = #{PAYOUT_6_8*wins/NTRIALS}"
-    when 4 then console.log "for hard #{i*2}, wins = #{wins} (#{wins/NTRIALS*100}%), return = #{PAYOUT_6_8*wins/NTRIALS}"
-    when 5 then console.log "for hard #{i*2}, wins = #{wins} (#{wins/NTRIALS*100}%), return = #{PAYOUT_4_10*wins/NTRIALS}"
+    when 2 then console.log "for hard #{i*2}, wins = #{wins} (#{Number(wins/NTRIALS*100).toFixed(1)}%), return = #{Number(PAYOUT_4_10*wins/NTRIALS).toFixed(2)}"
+    when 3 then console.log "for hard #{i*2}, wins = #{wins} (#{Number(wins/NTRIALS*100).toFixed(1)}%), return = #{Number(PAYOUT_6_8 *wins/NTRIALS).toFixed(2)}"
+    when 4 then console.log "for hard #{i*2}, wins = #{wins} (#{Number(wins/NTRIALS*100).toFixed(1)}%), return = #{Number(PAYOUT_6_8 *wins/NTRIALS).toFixed(2)}"
+    when 5 then console.log "for hard #{i*2}, wins = #{wins} (#{Number(wins/NTRIALS*100).toFixed(1)}%), return = #{Number(PAYOUT_4_10*wins/NTRIALS).toFixed(2)}"
