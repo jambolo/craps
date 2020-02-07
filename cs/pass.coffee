@@ -14,17 +14,15 @@ for j in [0...NTRIALS]
   done = false
 
   # off phase
-  phaseOn = false
-  until phaseOn or done
-    roll = randomRoll()
-    switch roll
-      when 2, 3, 12 then done = true
-      when 7, 11
-        wins = wins + 1
-        done = true
-      else
-        point = roll
-        phaseOn = true
+  roll = randomRoll()
+  switch roll
+    when 2, 3, 12
+      done = true
+    when 7, 11
+      wins = wins + 1
+      done = true
+    else
+      point = roll
 
   # on phase
   if not done
